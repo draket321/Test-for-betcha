@@ -31,4 +31,8 @@
 | random roll
 | payout calculations
 
-*
+* Added corner.js to contain ONLY corner game logic:
+| motion
+| corner detection
+| animations
+| payouts
