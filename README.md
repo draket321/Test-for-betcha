@@ -11,21 +11,15 @@ The entire project is coded in clean, modular JavaScript with separate HTML, CSS
 ##  Games Included
 ### **1. Coin Flip**
 Bet on **Heads** or **Tails**, flip the coin, and win or lose your bet amount.
+
 ### **2. Dice Roll**
 Pick a number from 1–6 and roll the die.
+
 ### **3. Pocket Screensaver (Corner Hit Game)**
 A bouncing red rectangle moves inside a 300×300 box (just like the nostalgic DVD logo).
 
 You win if the rectangle overlaps **75% or more** with any corner block within **10 seconds**.
 
-2. Open the game
-
-Just open index.html in any browser:
-Chrome
-Firefox
-Edge
-Safari
-No server is required.
 
 
 # Project Updates
