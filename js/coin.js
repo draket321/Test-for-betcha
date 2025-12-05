@@ -1,38 +1,43 @@
-// COIN SIDE SELECT
-document.getElementById("headsBtn").onclick = () => {
-  selectedCoinSide = "heads";
-  coinSelection.innerHTML = `You selected: <strong>heads</strong>`;
-};
+document.addEventListener("DOMContentLoaded", () => {
+  const headsBtn = document.getElementById("headsBtn");
+  const tailsBtn = document.getElementById("tailsBtn");
+  const flipBtn = document.getElementById("flipBtn");
 
-document.getElementById("tailsBtn").onclick = () => {
-  selectedCoinSide = "tails";
-  coinSelection.innerHTML = `You selected: <strong>tails</strong>`;
-};
+  headsBtn.onclick = () => {
+    selectedCoinSide = "heads";
+    coinSelection.innerHTML = `You selected: <strong>heads</strong>`;
+  };
 
-// COIN FLIP GAME
-document.getElementById("flipBtn").onclick = function () {
-  if (!selectedCoinSide) {
-    coinResult.innerHTML = "<strong>Please select Heads or Tails first!</strong>";
-    return;
-  }
+  tailsBtn.onclick = () => {
+    selectedCoinSide = "tails";
+    coinSelection.innerHTML = `You selected: <strong>tails</strong>`;
+  };
 
-  const betAmount = parseInt(coinBetInput.value);
-  if (!isValidBet(betAmount)) {
-    coinResult.innerHTML = "<strong>Invalid bet amount!</strong>";
-    return;
-  }
+  flipBtn.onclick = () => {
+    if (!selectedCoinSide) {
+      coinResult.innerHTML =
+        "<strong>Please select Heads or Tails first!</strong>";
+      return;
+    }
 
-  const result = Math.random() < 0.5 ? "heads" : "tails";
-  const won = result === selectedCoinSide;
+    const betAmount = parseInt(coinBetInput.value);
+    if (!isValidBet(betAmount)) {
+      coinResult.innerHTML = "<strong>Invalid bet amount!</strong>";
+      return;
+    }
 
-  if (won) {
-    balance += betAmount;
-    coinResult.innerHTML = `<strong>You won! It was ${result}. You gained ${betAmount} points!</strong>`;
-  } else {
-    balance -= betAmount;
-    coinResult.innerHTML = `<strong>You lost! It was ${result}. You lost ${betAmount} points.</strong>`;
-  }
+    const result = Math.random() < 0.5 ? "heads" : "tails";
+    const won = result === selectedCoinSide;
 
-  updateBalance();
-  coinBetInput.value = "";
-};
+    if (won) {
+      balance += betAmount;
+      coinResult.innerHTML = `<strong>You won! It was ${result}. You gained ${betAmount} points!</strong>`;
+    } else {
+      balance -= betAmount;
+      coinResult.innerHTML = `<strong>You lost! It was ${result}. You lost ${betAmount} points.</strong>`;
+    }
+
+    updateBalance();
+    coinBetInput.value = "";
+  };
+});
