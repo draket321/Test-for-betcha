@@ -18,7 +18,14 @@ A bouncing red rectangle moves inside a 300×300 box (just like the nostalgic DV
 
 You win if the rectangle overlaps **75% or more** with any corner block within **10 seconds**.
 
+2. Open the game
 
+Just open index.html in any browser:
+Chrome
+Firefox
+Edge
+Safari
+No server is required.
 
 
 # Project Updates
