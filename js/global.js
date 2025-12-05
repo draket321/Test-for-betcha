@@ -1,4 +1,4 @@
-// GLOBAL STATE
+// GLOBAL VARIABLES
 let balance = 1000;
 
 let selectedCoinSide = null;
@@ -19,53 +19,71 @@ const squareHeight = 20;
 const boxSize = 300;
 const speed = 2;
 
-// DOM references (collected once)
-const balanceEl = document.getElementById("balanceEl");
+// DOM references (declared now, assigned later)
+let balanceEl,
+  coinSelection,
+  coinResult,
+  coinBetInput,
+  diceSelection,
+  diceResult,
+  diceBetInput,
+  cornerResult,
+  cornerBetInput,
+  redSquareEl,
+  resetBtn;
 
-const coinSelection = document.getElementById("coinSelection");
-const coinResult = document.getElementById("coinResult");
-const coinBetInput = document.getElementById("coinBetInput");
+document.addEventListener("DOMContentLoaded", () => {
+  // Assign DOM references only AFTER page loads
+  balanceEl = document.getElementById("balanceEl");
 
-const diceSelection = document.getElementById("diceSelection");
-const diceResult = document.getElementById("diceResult");
-const diceBetInput = document.getElementById("diceBetInput");
+  coinSelection = document.getElementById("coinSelection");
+  coinResult = document.getElementById("coinResult");
+  coinBetInput = document.getElementById("coinBetInput");
 
-const cornerResult = document.getElementById("cornerResult");
-const cornerBetInput = document.getElementById("cornerBetInput");
-const redSquareEl = document.getElementById("redSquareEl");
+  diceSelection = document.getElementById("diceSelection");
+  diceResult = document.getElementById("diceResult");
+  diceBetInput = document.getElementById("diceBetInput");
 
-// UPDATE BALANCE
-function updateBalance() {
-  balanceEl.textContent = balance;
-}
+  cornerResult = document.getElementById("cornerResult");
+  cornerBetInput = document.getElementById("cornerBetInput");
+  redSquareEl = document.getElementById("redSquareEl");
 
-// RESET EVERYTHING
-document.getElementById("resetBtn").onclick = function () {
-  balance = 1000;
-  selectedCoinSide = null;
-  selectedDiceNumber = null;
-
-  coinSelection.innerHTML = "";
-  coinResult.innerHTML = "";
-  diceSelection.innerHTML = "";
-  diceResult.innerHTML = "";
-
-  // Stop corner game
-  if (cornerGameRunning) {
-    clearTimeout(cornerGameTimer);
-    cancelAnimationFrame(cornerAnimationId);
-  }
-
-  cornerGameRunning = false;
-  cornerBetInput.value = "";
-  cornerResult.innerHTML = "";
-
-  // Reset position
-  squareX = 130;
-  squareY = 140;
-
-  redSquareEl.style.left = squareX + "px";
-  redSquareEl.style.top = squareY + "px";
+  resetBtn = document.getElementById("resetBtn");
 
   updateBalance();
-};
+
+  // RESET BUTTON LOGIC
+  resetBtn.addEventListener("click", () => {
+    balance = 1000;
+    updateBalance();
+
+    selectedCoinSide = null;
+    selectedDiceNumber = null;
+
+    coinSelection.innerHTML = "";
+    coinResult.innerHTML = "";
+    diceSelection.innerHTML = "";
+    diceResult.innerHTML = "";
+    cornerResult.innerHTML = "";
+
+    if (cornerGameRunning) {
+      clearTimeout(cornerGameTimer);
+      cancelAnimationFrame(cornerAnimationId);
+    }
+
+    cornerGameRunning = false;
+    cornerBetAmount = 0;
+    cornerBetInput.value = "";
+
+    squareX = 130;
+    squareY = 140;
+
+    redSquareEl.style.left = squareX + "px";
+    redSquareEl.style.top = squareY + "px";
+  });
+});
+
+// Update balance visually
+function updateBalance() {
+  if (balanceEl) balanceEl.textContent = balance;
+}
