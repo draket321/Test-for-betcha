@@ -26,4 +26,9 @@
 | validating bet
 | producing result
 
+* Added dice.js to contain only dice-roll logic:
+| selecting number
+| random roll
+| payout calculations
+
 *
