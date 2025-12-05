@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BETCHA</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>BETCHA</h1>
+    <p class="subtitle">Making Betting Fun Again.</p>
+
+    <!-- Balance Section -->
+    <section class="balance-section">
+      <h2>Luck Points: <span id="balanceEl">1000</span></h2>
+      <button id="resetBtn">Reset</button>
+    </section>
+
+    <!-- Game 1: Coin Flip -->
+    <section class="game-section">
+      <h2>Game 1: Coin Flip</h2>
+
+      <div class="button-row">
+        <button id="headsBtn">Heads</button>
+        <button id="tailsBtn">Tails</button>
+      </div>
+
+      <div id="coinSelection" class="result-box"></div>
+
+      <div class="input-row">
+        <input id="coinBetInput" type="number" placeholder="Enter bet amount" />
+        <button id="flipBtn">Flip Coin</button>
+      </div>
+
+      <div id="coinResult" class="result-box"></div>
+    </section>
+
+    <!-- Game 2: Dice Roll -->
+    <section class="game-section">
+      <h2>Game 2: Dice Roll</h2>
+      <p>Select a number to bet on:</p>
+
+      <div class="button-row">
+        <button class="diceBtn" data-value="1">1</button>
+        <button class="diceBtn" data-value="2">2</button>
+        <button class="diceBtn" data-value="3">3</button>
+        <button class="diceBtn" data-value="4">4</button>
+        <button class="diceBtn" data-value="5">5</button>
+        <button class="diceBtn" data-value="6">6</button>
+      </div>
+
+      <div id="diceSelection" class="result-box"></div>
+
+      <div class="input-row">
+        <input id="diceBetInput" type="number" placeholder="Enter bet amount" />
+        <button id="rollBtn">Roll Dice</button>
+      </div>
+
+      <div id="diceResult" class="result-box"></div>
+    </section>
+
+    <!-- Game 3: Corner Screensaver -->
+    <section class="game-section">
+      <h2>Game 3: Pocket Screensaver</h2>
+
+      <div id="gameBoxCtn">
+        <!-- Corner rectangles -->
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <!-- Moving Red Rectangle -->
+        <div id="redSquareEl" title="DVD Video"></div>
+      </div>
+
+      <div class="input-row">
+        <input id="cornerBetInput" type="number" placeholder="Enter bet amount" />
+        <button id="startBtn">Start Game</button>
+      </div>
+
+      <div id="cornerResult" class="result-box"></div>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/globals.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/coin.js"></script>
+  <script src="js/dice.js"></script>
+  <script src="js/corner.js"></script>
+</body>
+</html>
