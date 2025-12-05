@@ -16,4 +16,9 @@
 * Created js Folder
 * Added global.js to store shared state and basic helpers
 
-* 
+* Added utils.js to hold shared helper functions:
+| bet validation
+| rectangle intersection
+| random angle generator
+
+*
