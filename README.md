@@ -1,5 +1,20 @@
-# Test-for-betcha
+# BETCHA  
+### *Making Betting Fun Again*
 
+BETCHA is a browser-based mini-casino featuring three fast, fun, arcade-style betting games.  
+You start with **1,000 Luck Points** and try to win as many as you can!
+
+The entire project is coded in clean, modular JavaScript with separate HTML, CSS, and JS files to keep everything easy to maintain and extend.
+
+
+
+
+
+
+
+
+
+# Project Updates
 * Added index.html to contain:
 |  Page layout
 |  Buttons
