@@ -1,0 +1,90 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  margin-top: 0;
+  font-style: italic;
+}
+
+.balance-section {
+  margin: 30px auto;
+  padding: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  color: black;
+  cursor: pointer;
+  margin: 5px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+}
+
+.game-section {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 600px;
+  border-top: 1px solid #ddd;
+}
+
+.button-row {
+  margin: 15px 0;
+}
+
+.result-box {
+  margin-top: 15px;
+  min-height: 20px;
+}
+
+.input-row {
+  margin: 15px 0;
+}
+
+/* Game 3 — Screensaver */
+
+#gameBoxCtn {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+  margin: 20px auto;
+}
+
+.corner {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background-color: grey;
+}
+
+.top-left { top: 0; left: 0; }
+.top-right { top: 0; right: 0; }
+.bottom-left { bottom: 0; left: 0; }
+.bottom-right { bottom: 0; right: 0; }
+
+#redSquareEl {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background-color: red;
+  top: 140px;
+  left: 130px;
+}
