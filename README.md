@@ -9,7 +9,6 @@ The entire project is coded in clean, modular JavaScript with separate HTML, CSS
 
 
 ##  Games Included
-
 ### **1. Coin Flip**
 Bet on **Heads** or **Tails**, flip the coin, and win or lose your bet amount.
 ### **2. Dice Roll**
